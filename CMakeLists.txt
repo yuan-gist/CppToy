@@ -15,6 +15,9 @@ include_directories(${PROJECT_SOURCE_DIR}/headers)
 # a CMakeLists.txt must exist in this subdirectory
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
 
+# enable_testing() must be placed topmost of testing cmake command
+# otherwise: No tests were found!!!
+enable_testing()
 # google test
 # is googletest already defined and built
 if(NOT googletest)
@@ -29,12 +32,9 @@ if(NOT googletest)
   FetchContent_MakeAvailable(googletest)
 endif()
 # tell cmake where to find test
-add_subdirectory(${PROJECT_SOURCE_DIR}/regression_tests)
-
-# # Now simply link against gtest or gtest_main as needed. Eg
-# add_executable( runUnitTests example.cpp )
-# target_link_libraries(runUnitTests gtest_main)
-# add_test(NAME runUnitTests COMMAND runUnitTests)
+add_subdirectory(${PROJECT_SOURCE_DIR}/tests)
+# include testing CMake package; command: ctest [-VV] then accessible
+include(CTest)
 
 message(STATUS " ")
 message(STATUS "========================================================")
