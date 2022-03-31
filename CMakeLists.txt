@@ -9,6 +9,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/bin)
 set(LIBRARY_OUTPUT_PATH    ${PROJECT_SOURCE_DIR}/build/lib)
 
 # tell cmake where to look for *.h files
+# must before add_subdirectory
 include_directories(${PROJECT_SOURCE_DIR}/headers)
 
 # tell cmake to add a subdirectory

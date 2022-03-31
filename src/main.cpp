@@ -1,13 +1,12 @@
 #include<iostream>
 #include "tools.h"
-using namespace std;
 
 
 int main(){
    sayHello();
 
    const int a=1, b=2;
-   cout<< add(a,b)<<endl;
+   std::cout<< add(a,b)<<std::endl;
 
    return 0;
 }

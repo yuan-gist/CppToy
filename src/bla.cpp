@@ -1,6 +1,5 @@
 #include<iostream>
-using namespace std;
 
 void bla(){
-    cout<<"Bla bla ..."<<endl;
+    std::cout<<"Bla bla ..."<<std::endl;
 }
