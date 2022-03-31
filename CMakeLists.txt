@@ -1,5 +1,5 @@
 # version (Mandatory)
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.14)
 
 # project name (Mandatory)
 project(mySmallProject)
@@ -14,6 +14,27 @@ include_directories(${PROJECT_SOURCE_DIR}/headers)
 # tell cmake to add a subdirectory
 # a CMakeLists.txt must exist in this subdirectory
 add_subdirectory(${PROJECT_SOURCE_DIR}/src)
+
+# google test
+# is googletest already defined and built
+if(NOT googletest)
+  include(FetchContent)
+  FetchContent_Declare(
+    googletest
+    # Specify the commit you depend on and update it regularly.
+    URL https://github.com/google/googletest/archive/refs/heads/main.zip
+  )
+  # For Windows: Prevent overriding the parent project's compiler/linker settings
+  set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+  FetchContent_MakeAvailable(googletest)
+endif()
+# tell cmake where to find test
+add_subdirectory(${PROJECT_SOURCE_DIR}/regression_tests)
+
+# # Now simply link against gtest or gtest_main as needed. Eg
+# add_executable( runUnitTests example.cpp )
+# target_link_libraries(runUnitTests gtest_main)
+# add_test(NAME runUnitTests COMMAND runUnitTests)
 
 message(STATUS " ")
 message(STATUS "========================================================")
