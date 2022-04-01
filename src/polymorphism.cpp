@@ -1,10 +1,15 @@
 #include<iostream>
 using namespace std;
 
-class Rect{
+class Printable{   // interface
+    public:
+        virtual void Print() const=0; // pure virtual function
+};
+
+class Rect: public Printable{
     public:
         Rect(int width, int height): width_{width}, height_(height){}
-        virtual void Print() const{
+        void Print() const override{
             cout << "Rectangle: width = " << width_ << ", height = " << height_<<endl;
         }
     protected:
@@ -20,10 +25,14 @@ class Square: public Rect{
         }
 };
 
+void Print(const Printable& var){
+    var.Print();
+}
+
 int main(){
     // Rect(10, 20).Print();
-    // const Square& sq_ref = Rect(10,10);
-    const Rect& rec_ref = Square(10);
+    Print(Rect(10,20));
+    // const Rect& rec_ref = Square(10);
     // rec_ref.Print();
     return 0;
 }

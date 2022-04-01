@@ -1,0 +1,3 @@
+2.34 One 0.21 x  x
+2 2.004 two 0.23
+3 -2.34 string "Hello world..." 0.22
