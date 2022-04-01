@@ -3,7 +3,7 @@
 int main(){
     // overflow
     int ar[] = {1, 2, 3};
-    for(auto i=0; i<6; i++){
+    for(int i=0; i<6; i++){
         std::cout << i << " " << ar[i] << " " << &ar[i] << std::endl; 
     }
 
