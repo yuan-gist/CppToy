@@ -1,0 +1,5 @@
+*/build/
+*.DS_store
+*a.out
+*.vs_code
+*.gitclone
