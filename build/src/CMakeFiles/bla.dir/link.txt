@@ -1,2 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/ar qc ../lib/libbla.a CMakeFiles/bla.dir/bla.cpp.o
-/Library/Developer/CommandLineTools/usr/bin/ranlib ../lib/libbla.a

@@ -1,14 +1,12 @@
 #include<iostream>
 #include "tools.h"
 
-int main(int argc, char** argv){
-    sayHello();
 
-    const int a=1, b=2;
-    std::cout<< add(a,b)<<std::endl;
+int main(){
+   sayHello();
 
-    // DisplayImages();
-    wrong_types();
+   const int a=1, b=2;
+   std::cout<< add(a,b)<<std::endl;
 
-    return 0;
+   return 0;
 }
