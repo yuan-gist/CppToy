@@ -1,16 +1,22 @@
 # version (Mandatory)
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.17)
 
 # project name (Mandatory)
 project(mySmallProject)
 
 # tell cmake to output binary, library here
+set (CMAKE_CXX_STANDARD 14)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/build/bin)
 set(LIBRARY_OUTPUT_PATH    ${PROJECT_SOURCE_DIR}/build/lib)
+# ???
+set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE INTERNAL "" FORCE)
 
 # tell cmake where to look for *.h files
 # must before add_subdirectory
 include_directories(${PROJECT_SOURCE_DIR}/headers)
+# opencv *.h files
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
 
 # tell cmake to add a subdirectory
 # a CMakeLists.txt must exist in this subdirectory
