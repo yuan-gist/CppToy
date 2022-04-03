@@ -1,0 +1,5 @@
+/Users/yuan/Documents/C++/mySmallProject/src/build/CMakeFiles/tools.dir
+/Users/yuan/Documents/C++/mySmallProject/src/build/CMakeFiles/bla.dir
+/Users/yuan/Documents/C++/mySmallProject/src/build/CMakeFiles/main.dir
+/Users/yuan/Documents/C++/mySmallProject/src/build/CMakeFiles/edit_cache.dir
+/Users/yuan/Documents/C++/mySmallProject/src/build/CMakeFiles/rebuild_cache.dir
