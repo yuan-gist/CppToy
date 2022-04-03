@@ -8,7 +8,7 @@ class Printable{   // interface
 
 class Rect: public Printable{
     public:
-        Rect(int width, int height): width_{width}, height_(height){}
+        Rect(const int& width, const int& height): width_{width}, height_(height){}
         void Print() const override{
             cout << "Rectangle: width = " << width_ << ", height = " << height_<<endl;
         }
@@ -19,7 +19,7 @@ class Rect: public Printable{
 
 class Square: public Rect{
     public:
-        explicit Square(int size): Rect(size, size){}
+        explicit Square(const int& size): Rect(size, size){}
         void Print() const override{
             cout << "Square: size = " << width_ << ", size = " << height_<<endl;
         }
