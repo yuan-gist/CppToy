@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string.h>
+#include<cstring>
 
 int main(){
 
@@ -7,8 +7,8 @@ int main(){
     char b[5];
     char c[5];
 
-    strcpy(b, a);
-    memcpy(c, a, 5);
+    std::strcpy(b, a);
+    std::memcpy(c, a, 5);
     
     for(const auto& item: b){
         std::cout << item;
